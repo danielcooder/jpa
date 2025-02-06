@@ -13,16 +13,16 @@ public class NovoUsuario {
                         .createEntityManagerFactory("jpa");
                 EntityManager em = emf.createEntityManager();
 
-                Usuario novoUsuario = new Usuario("Jucas", "juca@lanche.com.br");
+                Usuario novoUsuario = new Usuario("Dani", "dan@lanche.com.br");
 
                 em.getTransaction().begin();
                 em.persist(novoUsuario);
                 em.getTransaction().commit();
 
-                em.close();
+                System.out.println("O Id gerado foi: " + novoUsuario.getId());
+
+
+        em.close();
                 emf.close();
             }
         }
-
-
-
